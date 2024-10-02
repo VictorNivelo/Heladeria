@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HELADOS</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<style>
+		body {
+			background-image: url('https://img.freepik.com/foto-gratis/vista-aerea-conos-waffle-helado-fondo-rosa_181624-46779.jpg?w=2000');
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+			color: #333;
+		}
+
+		.content {
+			background-color: rgba(255, 255, 255, 0.9);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 50px;
+		}
+
+		h2,
+		h4 {
+			color: #ff4081;
+		}
+
+		.btn-danger {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container text-center content">
+		<h2>Helados Pinguino</h2>
+		<p>Los helados con los que cuenta el local Pinguino son los siguientes:</p>
+
+		<h4>Lista de Helados</h4>
+		<ul class="list-group">
+			{% for Helado in helados %}
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				Helado: {{ Helado.sabor_Helado }}
+				<a class="btn btn-primary" href="DatosUsuario" role="button">Comprar Helado</a>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<a class="btn btn-danger" href="http://127.0.0.1:8000/heladeria" role="button">Regresar</a>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3YBOgGIIYiw4zjIMaxK74z4ypnV2LHw+orF5B1UvH2WI8Hb5jyyF0P+fIfIcYB1"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
